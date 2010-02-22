@@ -1,0 +1,13 @@
+
+HOMEPAGE="http://docbook2x.sourceforge.net/"
+SRC_URI="mirror://sourceforge/docbook2x/${P}.tar.gz"
+PATCH_URI="
+	mirror://portage/app-text/${PN}/files/${P}-filename_whitespace_handling.patch
+	mirror://portage/app-text/${PN}/files/${P}-preprocessor_declaration_syntax.patch
+	mirror://portage/app-text/${PN}/files/${P}-error_on_missing_refentry.patch
+"
+
+CYGCONF_ARGS="
+	--with-xslt-processor=libxslt
+	--program-transform-name=s,\(docbook2.*\),\1.pl,
+"
