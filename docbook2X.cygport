@@ -1,0 +1,19 @@
+NAME="docbook2X"
+VERSION=0.8.8
+RELEASE=1
+CATEGORY="Text"
+SUMMARY="Converts DocBook to man and Texinfo formats"
+DESCRIPTION="docbook2X is a software package that converts DocBook documents
+into the traditional Unix man page format and the GNU Texinfo format. Notable
+features include table support for man pages, internationalization support, and
+easy customization of the output using XSLT."
+HOMEPAGE="http://docbook2x.sourceforge.net/"
+SRC_URI="mirror://sourceforge/docbook2x/${NAME}-${VERSION}.tar.gz"
+
+docbook2X_REQUIRES="libxslt openjade OpenSP texinfo"
+
+CYGCONF_ARGS="
+	--with-html-xsl
+	--with-xslt-processor=libxslt
+	--program-transform-name=s,\(docbook2\),\1x-,
+"
